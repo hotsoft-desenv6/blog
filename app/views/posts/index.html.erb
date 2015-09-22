@@ -1,0 +1,22 @@
+<div class=row-fluid>
+<% if logado?  %>
+  <h2>Administração</h2>
+  <strong><%= link_to 'Novo Post', new_post_path %></strong>
+  <br/>
+<% end %>
+
+<% @posts.reverse.each do |p| %>
+  <div class="span4">
+    <h2><%= p.titulo %> </h2>
+    <p> <%= p.texto[0..254] %>  </p>
+    <p>
+      <small>Visualizações: <%= p.visualizacoes %></small>
+    </p>
+    <p><%= link_to 'Veja mais', p,:class => "btn"  %>
+    <% if logado? %>
+      <%= link_to 'Editar', edit_post_path(p), :class => "btn"  %></p>
+    <% end %>
+
+  </div>
+<% end %>
+</div>

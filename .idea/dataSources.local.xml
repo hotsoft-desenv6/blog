@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails blog: test" uuid="20e5b9b8-5d34-45e0-aeff-c9cb350aa78d">
+      <secret-storage>memory</secret-storage>
+    </data-source>
+    <data-source name="Rails blog: development" uuid="fae81f35-983c-474d-88cb-3d527b865d54">
+      <secret-storage>memory</secret-storage>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,708 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Ta",
+				"TabSolicitacao"
+			],
+			[
+				"co",
+				"CodigoSolicitacao"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "http://rvm.io/\n",
+			"settings":
+			{
+				"buffer_size": 15,
+				"line_ending": "Unix",
+				"name": "http://rvm.io/"
+			}
+		},
+		{
+			"contents": "class PostsController < ApplicationController\n  # GET /posts\n  # GET /posts.xml\n  def index\n\n    if  request.authorization.nil?\n      @posts = Post.order(\"updated_at\").last(3)\n    else\n      @posts = Post.all\n    end\n\n    respond_to do |format|\n      format.html # index.html.erb\n      format.xml  { render :xml => @posts }\n    end\n  end\n\n  # GET /posts/1\n  # GET /posts/1.xml\n  def show\n    @post = Post.find(params[:id])\n    @post.visualizacoes += 1\n    @post.update_record_without_timestamping\n\n    respond_to do |format|\n      format.html # show.html.erb\n      format.xml  { render :xml => @post }\n    end\n  end\n\n  #GET /posts/new\n  #GET /posts/new.xml\n  def new\n    @post = Post.new\n\n    respond_to do |format|\n      format.html # new.html.erb\n      format.xml  { render :xml => @post }\n    end\n  end\n\n  #GET /posts/1/edit\n  def edit\n    @post = Post.find(params[:id])\n  end\n\n  # POST /posts\n  # POST /posts.xml\n  def create\n    @post = Post.new(params[:post])\n\n    respond_to do |format|\n      if @post.save\n        format.html { redirect_to(@post, :notice => 'Post was successfully created.') }\n        format.xml  { render :xml => @post, :status => :created, :location => @post }\n      else\n        format.html { render :action => \"new\" }\n        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }\n      end\n    end\n  end\n\n  #PUT /posts/1\n  #PUT /posts/1.xml\n  def update\n    @post = Post.find(params[:id])\n\n    respond_to do |format|\n      if @post.update_attributes(params[:post])\n        format.html { redirect_to(@post, :notice => 'Post was successfully updated.') }\n        format.xml  { head :ok }\n      else\n        format.html { render :action => \"edit\" }\n        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }\n      end\n    end\n  end\n\n  #DELETE /posts/1\n  #DELETE /posts/1.xml\n  def destroy\n    @post = Post.find(params[:id])\n    @post.destroy\n\n    respond_to do |format|\n      format.html { redirect_to(posts_url) }\n      format.xml  { head :ok }\n    end\n  end\nend\n",
+			"file": "app/controllers/posts_controller.rb",
+			"file_size": 2041,
+			"file_write_time": 130239107560000000,
+			"settings":
+			{
+				"buffer_size": 2041,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/posts/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 530,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/tiago/projetos/stockfin/Rakefile",
+			"settings":
+			{
+				"buffer_size": 307,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/tiago/desktop/exercicio_js/src/js/main.coffee",
+			"settings":
+			{
+				"buffer_size": 4981,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/tiago/projetos/users_control/config/app_config.yml",
+			"settings":
+			{
+				"buffer_size": 71,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/home/tiago/.kde/share/apps/servicemenu-download/158153-dfnct.desktop",
+			"settings":
+			{
+				"buffer_size": 631,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/tiago/.kde/share/kde4/services/ServiceMenus/158153-dfnct.desktop",
+			"settings":
+			{
+				"buffer_size": 631,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 201.0,
+		"last_filter": "side",
+		"selected_items":
+		[
+			[
+				"side",
+				"View: Toggle Side Bar"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"js",
+				"Set Syntax: JSON"
+			],
+			[
+				"woe",
+				"Word Wrap: Toggle"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"w",
+				"Word Wrap: Toggle"
+			],
+			[
+				"xml",
+				"Indent XML"
+			],
+			[
+				"pa",
+				"Package Control: List Packages"
+			],
+			[
+				"h",
+				"Snippet: html"
+			],
+			[
+				"ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"wor",
+				"Word Wrap: Toggle"
+			],
+			[
+				"te",
+				"Set Syntax: Textile"
+			],
+			[
+				"xm",
+				"Set Syntax: XML"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 327.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/tiago/projetos/blog",
+		"/home/tiago/projetos/blog/app",
+		"/home/tiago/projetos/blog/app/controllers",
+		"/home/tiago/projetos/blog/app/mailers",
+		"/home/tiago/projetos/blog/app/views",
+		"/home/tiago/projetos/blog/app/views/layouts",
+		"/home/tiago/projetos/blog/app/views/posts",
+		"/home/tiago/projetos/blog/config",
+		"/home/tiago/projetos/blog/config/initializers",
+		"/home/tiago/projetos/blog/db",
+		"/home/tiago/projetos/blog/db/migrate"
+	],
+	"file_history":
+	[
+		"/tmp/Trace Vitros 1.txt",
+		"/tmp/Trace Vitros 2.txt",
+		"/home/tiago/blog/config/database.yml",
+		"/home/tiago/update/stockfin/tmp/restart.txt",
+		"/home/tiago/skype/vitros 28-08.txt",
+		"/home/tiago/projetos/stockfin_vm2/log_bkp/cron.log",
+		"/tmp/2015_08.log",
+		"/home/tiago/bin/android-sdk-linux/SDK Readme.txt",
+		"/home/tiago/projetos/stockfin_vm2/tmp/restart.txt",
+		"/home/tiago/desktop/vitros.CSV",
+		"/home/tiago/lablaudo/bkp/etc/rc5.d/S91apache2",
+		"/home/tiago/lablaudo/bkp/etc/rc4.d/S91apache2",
+		"/home/tiago/lablaudo/bkp/etc/rc3.d/S99rc.local",
+		"/home/tiago/lablaudo/bkp/etc/rc3.d/S99ondemand",
+		"/home/tiago/lablaudo/bkp/etc/rcS.d/S55urandom",
+		"/home/tiago/lablaudo/bkp/etc/rcS.d/S37apparmor",
+		"/home/tiago/lablaudo/bkp/etc/rc0.d/S20sendsigs",
+		"/home/tiago/lablaudo/bkp/etc/rc.local",
+		"/home/tiago/projetos/blog/app/views/posts/_meta_description.erb",
+		"/home/tiago/projetos/blog/app/views/comentarios/index.html.erb",
+		"/home/tiago/lablaudo/etc/apache2/sites-enabled/007-users_control_ssl.conf",
+		"/home/tiago/lablaudo/etc/apache2/sites-enabled/006-stockfin_ssl.conf",
+		"/home/tiago/lablaudo/etc/apache2/sites-enabled/005-resultados_online_ssl.conf",
+		"/home/tiago/lablaudo/etc/apache2/sites-enabled/004-users_control.conf",
+		"/home/tiago/lablaudo/etc/apache2/sites-enabled/003-stockfin.conf",
+		"/home/tiago/projetos/blog/Gemfile",
+		"/home/tiago/lablaudo/etc/apache2/apache2.conf",
+		"/home/tiago/lablaudo/etc/apache2/sites-available/dominio_4193",
+		"/home/tiago/lablaudo/etc/apache2/sites-available/drupal2015",
+		"/home/tiago/lablaudo/etc/apache2/sites-available/drupal7",
+		"/home/tiago/lablaudo/etc/apache2/sites-available/resultados_online_ssl",
+		"/home/tiago/lablaudo/etc/apache2/sites-available/stockfin",
+		"/home/tiago/lablaudo/etc/apache2/sites-available/stockfin_ssl",
+		"/home/tiago/lablaudo/etc/apache2/sites-available/users_control",
+		"/home/tiago/lablaudo/etc/apache2/sites-available/users_control_ssl",
+		"/home/tiago/lablaudo/etc/apache2/sites-enabled/002-resultados_online.conf",
+		"/home/tiago/publico/rubymine.txt",
+		"/home/tiago/publico/serial.txt",
+		"/var/tmp/kdecache-tiago/krun/15728_0_0-database.yml",
+		"/home/hotsoft/projetos/stockfin/config/database.yml",
+		"/home/hotsoft/projetos/blog/config/routes.rb",
+		"/home/hotsoft/projetos/stockfin/config/environment.rb",
+		"/home/hotsoft/projetos/blog/config/environments/development.rb",
+		"/home/hotsoft/projetos/blog/Gemfile",
+		"/home/hotsoft/projetos/blog/app/controllers/comentarios_controller.rb",
+		"/home/hotsoft/projetos/blog/app/controllers/application_controller.rb",
+		"/home/hotsoft/projetos/blog/app/controllers/admin_controller.rb",
+		"/home/hotsoft/projetos/lm/DB/migration/0000397.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000396.sql",
+		"/home/hotsoft/VirtualBox VMs/xe4/xe4.vbox",
+		"/home/hotsoft/VirtualBox VMs/xe4-/xe4.vbox",
+		"/home/hotsoft/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/hotsoft/projetos/blog/config/environment.rb",
+		"/home/hotsoft/projetos/blog/config/application.rb",
+		"/home/hotsoft/projetos/blog/app/models/post.rb",
+		"/home/hotsoft/projetos/blog/app/models/comentario.rb",
+		"/home/hotsoft/projetos/blog/app/helpers/comentarios_helper.rb",
+		"/home/hotsoft/projetos/blog/app/controllers/posts_controller.rb",
+		"/home/hotsoft/projetos/blog/config/boot.rb",
+		"/home/hotsoft/projetos/lm/DB/Scripts/expurgo_por_data.sql",
+		"/home/hotsoft/tmp/RemoteBox-1.8.1/share/remotebox/rbox_gui_vmm.pl",
+		"/home/hotsoft/tmp/RemoteBox-1.8.1/share/remotebox/rbox_gui_init.pl",
+		"/home/hotsoft/projetos/lm/DB/migration/0000001.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000002.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000003.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000004.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000005.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000006.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000007.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000008.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000009.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000010.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000011.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000012.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000013.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000014.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000015.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000016.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000017.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000018.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000019.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000020.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000021.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000022.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000023.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000024.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000025.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000026.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000027.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000028.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000029.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000030.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000031.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000032.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000033.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000034.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000035.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000036.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000037.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000038.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000039.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000040.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000041.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000042.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000043.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000044.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000045.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000046.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000047.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000048.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000049.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000050.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000051.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000052.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000053.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000054.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000055.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000056.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000057.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000058.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000059.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000060.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000061.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000062.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000063.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000064.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000065.sql",
+		"/home/hotsoft/projetos/lm/DB/migration/0000066.sql"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/home/tiago/lablaudo/etc/apache2/",
+			"/home/hotsoft/projetos/blog",
+			"/home/hotsoft/desktop/ExemploHygiaInterLab",
+			"/home/hotsoft/projetos/lm/DB/migration",
+			"/home/hotsoft/projetos/FW",
+			"/home/hotsoft/documentos/tiss/3.01"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"lablaudo.com.br",
+			"debug_rjs=",
+			"root",
+			"'",
+			"'+",
+			"+",
+			"'",
+			".\n",
+			"CASE",
+			"p2",
+			"EnviaDadosToHygia",
+			"NewDataSet",
+			"275",
+			"148186",
+			"<?",
+			"148186",
+			"<?",
+			"149017",
+			"strSenha",
+			"dsDados",
+			"complexType",
+			"*",
+			"89",
+			"propriedadelog",
+			"messagebox",
+			"situacaoProtocolo",
+			"registroas",
+			"st_registroANS",
+			"protocolo",
+			"protocolotiss",
+			"registroANS",
+			"mensagemErro",
+			"codigoGlosa"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"lablaudotest.local",
+			"",
+			"\\nCASE",
+			"m2",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 7,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15,
+								15
+							]
+						],
+						"settings":
+						{
+							"auto_name": "http://rvm.io/",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/controllers/posts_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2041,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								92,
+								92
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/posts/index.html.erb",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								530,
+								530
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/tiago/projetos/stockfin/Rakefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 307,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/tiago/desktop/exercicio_js/src/js/main.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4981,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/tiago/projetos/users_control/config/app_config.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 71,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/tiago/.kde/share/apps/servicemenu-download/158153-dfnct.desktop",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 631,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								569,
+								569
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/tiago/.kde/share/kde4/services/ServiceMenus/158153-dfnct.desktop",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 631,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								631,
+								631
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "blog.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 394.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
